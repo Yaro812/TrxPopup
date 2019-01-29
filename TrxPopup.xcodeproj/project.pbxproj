@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		CE2F318D22005E8900BA30ED /* TrxPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2F318B22005E8900BA30ED /* TrxPopup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE2F319722005ED200BA30ED /* AppearanceAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F319422005ED200BA30ED /* AppearanceAnimator.swift */; };
+		CE2F319922005ED200BA30ED /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F319622005ED200BA30ED /* PopupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE2F318822005E8900BA30ED /* TrxPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrxPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2F318B22005E8900BA30ED /* TrxPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrxPopup.h; sourceTree = "<group>"; };
 		CE2F318C22005E8900BA30ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE2F319422005ED200BA30ED /* AppearanceAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceAnimator.swift; sourceTree = "<group>"; };
+		CE2F319622005ED200BA30ED /* PopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +50,20 @@
 		CE2F318A22005E8900BA30ED /* TrxPopup */ = {
 			isa = PBXGroup;
 			children = (
+				CE2F319322005E9600BA30ED /* Classes */,
 				CE2F318B22005E8900BA30ED /* TrxPopup.h */,
 				CE2F318C22005E8900BA30ED /* Info.plist */,
 			);
 			path = TrxPopup;
+			sourceTree = "<group>";
+		};
+		CE2F319322005E9600BA30ED /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F319422005ED200BA30ED /* AppearanceAnimator.swift */,
+				CE2F319622005ED200BA30ED /* PopupVC.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +109,7 @@
 				TargetAttributes = {
 					CE2F318722005E8900BA30ED = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -130,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2F319722005ED200BA30ED /* AppearanceAnimator.swift in Sources */,
+				CE2F319922005ED200BA30ED /* PopupVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -246,7 +263,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -261,10 +278,11 @@
 		CE2F319122005E8900BA30ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ZT3KNFVNG4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -278,6 +296,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = my.company.TrxPopup;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,10 +305,11 @@
 		CE2F319222005E8900BA30ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ZT3KNFVNG4;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

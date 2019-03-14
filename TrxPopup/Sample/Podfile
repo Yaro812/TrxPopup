@@ -6,5 +6,5 @@ target 'PopupContainer' do
   use_frameworks!
 
   # Pods for PopupContainer
-  pod 'TrxPopup', :path => '../../TrxPopup/'
+  pod 'TrxPopup', :path => '../../../TrxPopup/'
 end

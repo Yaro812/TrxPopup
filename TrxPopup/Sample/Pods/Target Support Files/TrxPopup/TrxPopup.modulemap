@@ -1,0 +1,6 @@
+framework module TrxPopup {
+  umbrella header "TrxPopup-umbrella.h"
+
+  export *
+  module * { export * }
+}

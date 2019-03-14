@@ -10,6 +10,8 @@
 		CE2F318D22005E8900BA30ED /* TrxPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2F318B22005E8900BA30ED /* TrxPopup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE2F319722005ED200BA30ED /* AppearanceAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F319422005ED200BA30ED /* AppearanceAnimator.swift */; };
 		CE2F319922005ED200BA30ED /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F319622005ED200BA30ED /* PopupVC.swift */; };
+		CE2F319B2200A5AE00BA30ED /* SlidingPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F319A2200A5AE00BA30ED /* SlidingPopupVC.swift */; };
+		CE2F31A32200AD9E00BA30ED /* SlidingPopupAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F31A22200AD9E00BA30ED /* SlidingPopupAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		CE2F318C22005E8900BA30ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE2F319422005ED200BA30ED /* AppearanceAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceAnimator.swift; sourceTree = "<group>"; };
 		CE2F319622005ED200BA30ED /* PopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
+		CE2F319A2200A5AE00BA30ED /* SlidingPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPopupVC.swift; sourceTree = "<group>"; };
+		CE2F31A22200AD9E00BA30ED /* SlidingPopupAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPopupAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				CE2F319422005ED200BA30ED /* AppearanceAnimator.swift */,
 				CE2F319622005ED200BA30ED /* PopupVC.swift */,
+				CE2F319A2200A5AE00BA30ED /* SlidingPopupVC.swift */,
+				CE2F31A22200AD9E00BA30ED /* SlidingPopupAnimator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2F319722005ED200BA30ED /* AppearanceAnimator.swift in Sources */,
+				CE2F319B2200A5AE00BA30ED /* SlidingPopupVC.swift in Sources */,
+				CE2F31A32200AD9E00BA30ED /* SlidingPopupAnimator.swift in Sources */,
 				CE2F319922005ED200BA30ED /* PopupVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,32 +1,39 @@
 //
-//  ViewController.swift
-//  PopupContainer
+//  SlidingPopupVC.swift
+//  TrxPopup
 //
-//  Created by user on 28/01/2019.
+//  Created by user on 29/01/2019.
 //  Copyright © 2019 user. All rights reserved.
 //
 
 import UIKit
 
-public class PopupVC: UIViewController {
+public class SlidingPopupVC: UIViewController {
     
     // MARK: Public static functions
     
-    public static func instantiate() -> PopupVC {
-        let vc = PopupVC(nibName: nil, bundle: nil)
+    public static func instantiate() -> SlidingPopupVC {
+        let vc = SlidingPopupVC(nibName: nil, bundle: nil)
         return vc
     }
     
     // MARK: Public properties
     
     /// Animator that handles appearing and disappearing animations
-    public var animator: UIViewControllerAnimatedTransitioning = PopupAnimator()
+    public var animator: UIViewControllerAnimatedTransitioning = SlidingPopupAnimator()
+    
+    public private(set) lazy var slidingView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 8
+        return view
+    }()
     
     public private(set) lazy var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 8
         return view
     }()
     
@@ -34,7 +41,7 @@ public class PopupVC: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Close", for: .normal)
-        button.tintColor = UIColor.white.withAlphaComponent(0.7)
+        button.tintColor = UIColor.black.withAlphaComponent(0.7)
         button.addTarget(self, action: #selector(tapClose), for: .touchUpInside)
         return button
     }()
@@ -56,6 +63,7 @@ public class PopupVC: UIViewController {
     
     private var containerWidthConstraint: NSLayoutConstraint!
     private var containerHeightConstraint: NSLayoutConstraint!
+    internal var sliderBotomInsetConstraint: NSLayoutConstraint!
     
     // MARK: Lifecycle
     
@@ -69,7 +77,7 @@ public class PopupVC: UIViewController {
     
     override public func updateViewConstraints() {
         containerWidthConstraint.constant = containerSize.width
-        containerHeightConstraint.constant = containerSize.height
+        containerHeightConstraint.constant = containerSize.height + 50
         super.updateViewConstraints()
     }
     
@@ -98,25 +106,32 @@ public class PopupVC: UIViewController {
     }
     
     private func setupViews() {
-        view.addSubview(containerView)
-        view.addSubview(closeButton)
+        view.addSubview(slidingView)
+        slidingView.addSubview(containerView)
+        slidingView.addSubview(closeButton)
         
-        containerWidthConstraint = containerView.widthAnchor.constraint(equalToConstant: containerSize.width)
-        containerHeightConstraint = containerView.heightAnchor.constraint(equalToConstant: containerSize.height)
-        let safeArea = view.safeAreaLayoutGuide
+        containerWidthConstraint = slidingView.widthAnchor.constraint(equalToConstant: containerSize.width)
+        containerHeightConstraint = slidingView.heightAnchor.constraint(equalToConstant: containerSize.height + 50)
+        sliderBotomInsetConstraint = slidingView.topAnchor.constraint(equalTo: view.bottomAnchor)
+//        let safeArea = view.safeAreaLayoutGuide
         let constraints: [NSLayoutConstraint] = [
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            sliderBotomInsetConstraint,
             containerWidthConstraint,
             containerHeightConstraint,
-            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: safeArea.leadingAnchor, multiplier: 1.0),
-            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: safeArea.topAnchor, multiplier: 1.0)
+            closeButton.centerXAnchor.constraint(equalTo: slidingView.centerXAnchor),
+            closeButton.topAnchor.constraint(equalTo: slidingView.topAnchor),
+            closeButton.heightAnchor.constraint(equalToConstant: 50),
+            containerView.leadingAnchor.constraint(equalTo: slidingView.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: slidingView.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: slidingView.bottomAnchor),
+            containerView.topAnchor.constraint(equalTo: closeButton.bottomAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }
 }
 
-extension PopupVC: UIViewControllerTransitioningDelegate {
+extension SlidingPopupVC: UIViewControllerTransitioningDelegate {
     public func animationController(forPresented presented: UIViewController,
                                     presenting: UIViewController,
                                     source: UIViewController)

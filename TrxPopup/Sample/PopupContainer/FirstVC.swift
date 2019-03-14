@@ -16,7 +16,7 @@ class FirstVC: UIViewController {
     }
     
     func showPopupAnimated() {
-        let containerVC = PopupVC.instantiate()
+        let containerVC = SlidingPopupVC.instantiate()
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let presententedVC = mainStoryboard.instantiateViewController(withIdentifier: "Navigator")

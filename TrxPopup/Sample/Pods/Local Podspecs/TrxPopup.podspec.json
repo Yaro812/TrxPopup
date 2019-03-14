@@ -1,0 +1,23 @@
+{
+  "name": "TrxPopup",
+  "version": "0.1.0",
+  "summary": "Modally show any view or ViewController",
+  "description": "A popup Controller to modally show any view or ViewController",
+  "homepage": "https://github.com/yaro812/TrxPopup",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Yaroslav": "thorax@me.com"
+  },
+  "source": {
+    "git": "https://github.com/yaro812/TrxPopup.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "swift_version": "4.2",
+  "source_files": "TrxPopup/Classes/**/*.{swift}"
+}

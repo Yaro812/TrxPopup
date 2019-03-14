@@ -1,0 +1,16 @@
+PODS:
+  - TrxPopup (0.1.0)
+
+DEPENDENCIES:
+  - TrxPopup (from `../../../TrxPopup/`)
+
+EXTERNAL SOURCES:
+  TrxPopup:
+    :path: "../../../TrxPopup/"
+
+SPEC CHECKSUMS:
+  TrxPopup: 83a99304bd43c2a2878ce9b1edaf8f0b7ced7c59
+
+PODFILE CHECKSUM: be0c0b6de9c4ee9cf8bf276a18216eae4902b0db
+
+COCOAPODS: 1.6.0.rc.1
